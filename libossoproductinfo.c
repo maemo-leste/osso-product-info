@@ -127,7 +127,7 @@ product_info_init_dbus(struct osso_product_info *pi)
 
   priv = malloc(sizeof(DBusConnection **));
 
-  if(!pi->priv)
+  if(priv)
   {
     dbus = dbus_bus_get_private(DBUS_BUS_SYSTEM, &error);
     if(dbus)
