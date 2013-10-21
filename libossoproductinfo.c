@@ -202,7 +202,7 @@ product_info_get_dbus(struct osso_product_info *pi,
         PRINT_ERROR("Could not init iterator");
     else
     {
-      if ( dbus_message_iter_get_arg_type(&iter) != DBUS_TYPE_ARRAY )
+      if (dbus_message_iter_get_arg_type(&iter) != DBUS_TYPE_ARRAY)
          PRINT_ERROR("Got non-array type from D-Bus");
       else
       {
@@ -275,6 +275,7 @@ product_info_get_sysinfo(struct osso_product_info *pi, const char *key)
   if(sysinfo_get_value((struct system_config *)pi->priv, key, &val, &len) >= 0)
   {
     rv = (char *)realloc(val, len + 1);
+
     if(rv)
       rv[len] = 0;
     else
@@ -440,7 +441,7 @@ osso_get_product_info(osso_product_info_code code)
   char* rv = NULL;
   struct osso_product_info *pi = init_sysinfo();
 
-  switch ( code )
+  switch (code)
   {
     case OSSO_PRODUCT_WLAN_CHANNEL:
     case OSSO_PRODUCT_KEYBOARD:
