@@ -441,6 +441,9 @@ osso_get_product_info(osso_product_info_code code)
   char* rv = NULL;
   struct osso_product_info *pi = init_sysinfo();
 
+  if(!pi)
+    return rv;
+
   switch (code)
   {
     case OSSO_PRODUCT_WLAN_CHANNEL:
@@ -472,7 +475,7 @@ osso_get_product_info(osso_product_info_code code)
         if(code == OSSO_VERSION)
         {
           rv = p;
-          goto out;
+          break;
         }
 
         for(i = 0; i < sizeof(tmp) / sizeof(tmp[0]); i++)
@@ -490,7 +493,7 @@ osso_get_product_info(osso_product_info_code code)
         {
           free(tmp[0]);
           PRINT_ERROR_ARGS("Unsupported sw version string: %s", info);
-          goto out;
+          break;
         }
 
         product = get_product_info_details(sw_info, tmp[1]);
@@ -544,7 +547,7 @@ osso_get_product_info(osso_product_info_code code)
   }
 
   finish_sysinfo(pi);
-out:
+
   return rv;
 }
 
