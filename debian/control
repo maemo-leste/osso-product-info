@@ -1,11 +1,23 @@
 Source: osso-product-info
-Section: libs
 Priority: extra
 Maintainer: Pali Rohár <pali.rohar@gmail.com>
 Build-Depends: debhelper (>= 5), libcal-dev, libdbus-1-dev, libsysinfo-dev, pkg-config
 Standards-Version: 3.9.3
 
+Package: osso-product-info
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libossoproductinfo0 (>= ${binary:Version})
+Description: get SW/HW information on OSSO platform
+ osso-product-info is a wrapper which provide a unified interface
+ to get an information about a hardware the program is running on,
+ and a version of OSSO sowftware.
+ .
+ This is a command-line utility to make queries about the product
+ information from scripts.
+
 Package: libossoproductinfo0
+Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: get SW/HW information on OSSO platform
@@ -16,10 +28,12 @@ Description: get SW/HW information on OSSO platform
  This is a shared library for C programs
 
 Package: libossoproductinfo-dev
+Section: libdevel
 Architecture: all
-Description: get SW/HW information on OSSO platform (development files)
+Depends: ${shlibs:Depends}, ${misc:Depends}, libossoproductinfo0 (>= ${binary:Version})
+Description: get SW/HW information on OSSO platform
  osso-product-info is a wrapper which provide a unified interface
  to get an information about a hardware the program is running on,
  and a version of OSSO sowftware.
  .
- This is a shared library for C programs
+ This is a development header file for C programs
