@@ -47,7 +47,7 @@ static int
 product_info_init_sb(struct osso_product_info* pi)
 {
   struct stat st;
-  return !(stat("/proc/component_version", &st) < 0);
+  return stat("/targets/links/scratchbox.config", &st);
 }
 
 static const char*
