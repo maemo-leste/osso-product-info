@@ -26,8 +26,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-#include "../libcal/src/cal.h" /* FIXME */
+#include <cal.h>
 
 #include "libossoproductinfo.h"
 
