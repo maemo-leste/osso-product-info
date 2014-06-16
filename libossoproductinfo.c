@@ -22,6 +22,7 @@
 #include <dbus/dbus.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -400,7 +401,7 @@ osso_set_product_info(osso_product_info_code code,
                          "sw-release-ver",
                          value,
                          strlen(value),
-                         CAL_BLOCK_FLAG_USER);
+                         CAL_FLAG_USER);
 
     if(rv < 0)
       PRINT_ERROR("cal block write error");
