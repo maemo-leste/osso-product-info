@@ -1,5 +1,6 @@
 Source: osso-product-info
 Priority: extra
+Section: utils
 Maintainer: Pali Rohár <pali.rohar@gmail.com>
 Build-Depends: debhelper (>= 5), libcal-dev, libdbus-1-dev, libsysinfo-dev, pkg-config
 Standards-Version: 3.9.3
