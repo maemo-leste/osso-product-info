@@ -590,7 +590,7 @@ osso_get_product_info_str(osso_product_info_code idx)
     return product_info_str[idx];
 }
 
-#if 1
+#if 0
 int main()
 {
   int code;
