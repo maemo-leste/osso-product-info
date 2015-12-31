@@ -79,17 +79,18 @@ main(int argc, char *argv[])
       case 's':
       {
         osso_product_info_code code;
-        char* p = strchr(optarg, '=');
+        char *p = strchr(optarg, '=');
 
-        if(!p || *(p+1) == 0)
+        if (!p || !(*(p + 1)))
           goto bad_set_arg;
 
         *p = 0;
         code = osso_get_product_info_idx(optarg);
-        if((int)code == -1)
+
+        if (((int)code) == -1)
           goto bad_set_arg;
 
-        if(osso_set_product_info(code, p) < 0)
+        if (osso_set_product_info(code, p + 1) < 0)
           exit(EXIT_FAILURE);
 
         exit(EXIT_SUCCESS);
