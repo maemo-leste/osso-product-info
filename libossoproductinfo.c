@@ -348,7 +348,7 @@ static char*
 get_product_info(osso_product_info_code code,
                        struct osso_product_info *pi)
 {
-  int i;
+  size_t i;
   char* rv = NULL;
   const char* key = NULL;
 
@@ -464,7 +464,7 @@ osso_get_product_info(osso_product_info_code code)
       {
         char* tmp[16] = {0,};
         const char** product;
-        int i;
+        size_t i;
         int len = strlen(info);
         char *p = malloc(len + 1);
 
@@ -569,7 +569,7 @@ osso_product_info_code
 osso_get_product_info_idx(const char *code)
 {
   osso_product_info_code rv = -1;
-  int i;
+  size_t i;
 
   for(i = 0; i < sizeof(product_info_str) / sizeof(product_info_str[0]); i++)
     if(!strcmp(code, product_info_str[i]))

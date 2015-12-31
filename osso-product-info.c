@@ -82,7 +82,7 @@ main(int argc, char *argv[])
 
         *p = 0;
         code = osso_get_product_info_idx(optarg);
-        if(code == -1)
+        if((int)code == -1)
           goto bad_set_arg;
 
         if(osso_set_product_info(code, p) < 0)
