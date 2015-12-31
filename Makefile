@@ -1,7 +1,7 @@
 all: libossoproductinfo.so.0.7.3 osso-product-info
 
 libossoproductinfo.so.0.7.3: libossoproductinfo.c libossoproductinfo.h
-	$(CC) $(CFLAGS) $(shell pkg-config --cflags --libs libcal sysinfo dbus-1) -shared -Wl,-soname=libossoproductinfo.so.0 $^ -o $@
+	$(CC) $(CFLAGS) $(shell pkg-config --cflags --libs libcal sysinfo dbus-1) -pthread -shared -Wl,-soname=libossoproductinfo.so.0 $^ -o $@
 
 osso-product-info: osso-product-info.c libossoproductinfo.so.0.7.3
 	$(CC) $(CFLAGS) $^ -o $@
