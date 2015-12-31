@@ -300,9 +300,9 @@ product_info_fini_sysinfo(struct osso_product_info *pi)
 static struct osso_product_info
 osso_product_info[] =
 {
-  {product_info_init_sb, product_info_get_sb, product_info_fini_sb},
-  {product_info_init_dbus, product_info_get_dbus, product_info_fini_dbus},
-  {product_info_init_sysinfo, product_info_get_sysinfo, product_info_fini_sysinfo},
+  {product_info_init_sb, product_info_get_sb, product_info_fini_sb, NULL},
+  {product_info_init_dbus, product_info_get_dbus, product_info_fini_dbus, NULL},
+  {product_info_init_sysinfo, product_info_get_sysinfo, product_info_fini_sysinfo, NULL},
 };
 
 static pthread_mutex_t product_info_lock;
