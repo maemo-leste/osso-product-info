@@ -538,7 +538,7 @@ osso_get_product_info(osso_product_info_code code)
             rv = strdup(product[3]);
         }
         else
-          PRINT_ERROR_ARGS("Unknown product: %s", product);
+          PRINT_ERROR_ARGS("Unknown product: %s", info);
 
         free(info);
       }
