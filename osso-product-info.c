@@ -62,6 +62,10 @@ main(int argc, char *argv[])
         if(((int)code) != -1)
         {
           char* p = osso_get_product_info(code);
+          if (!p) {
+            fprintf(stderr, "Error getting variable %s value\n", optarg);
+            exit(EXIT_FAILURE);
+          }
           printf("%s\n", p);
           free(p);
         }
