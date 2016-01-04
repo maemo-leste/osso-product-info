@@ -1,3 +1,9 @@
+osso-product-info (0.7.3.2-2) unstable; urgency=low
+
+  * Fix not setting OSSO_VERSION correctly
+
+ -- Ivaylo Dimitrov <freemangordon@abv.bg>  Mon, 4 Jan 2016 17:50:22 +0200
+
 osso-product-info (0.7.3.2-1) unstable; urgency=low
 
   * Initial release
