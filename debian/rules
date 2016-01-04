@@ -13,6 +13,20 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+CFLAGS = -fPIC -Wall -g -Wmissing-prototypes -Wcast-align
+
+ifneq (,$(findstring thumb,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -mthumb
+endif
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+export CFLAGS
+
 build:
 	$(MAKE)
 
